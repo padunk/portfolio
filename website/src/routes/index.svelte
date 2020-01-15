@@ -1,5 +1,5 @@
 <script>
-
+	import MainContent from "../components/MainContent.svelte";
 </script>
 
 <svelte:head>
@@ -8,4 +8,4 @@
 
 <h1 hidden>Abraham Anak Agung</h1>
 
-<p>testing</p>
+<MainContent />

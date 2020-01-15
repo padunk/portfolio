@@ -2,6 +2,8 @@ $main-color: peru;
 
 $dark-gray: hsl(240, 10%, 38%);
 $light-gray: hsl(0, 0%, 93%);
+$light-gray-transparent: hsla(0, 0%, 93%, 0.8);
+$dark-gray-transparent: hsla(240, 10%, 38%, 0.5);
 
 *,
 *::before,
@@ -17,6 +19,5 @@ html {
 
 body {
    background-color: $light-gray;
-   padding: 3em 4em;
    line-height: 1.6;
 }
