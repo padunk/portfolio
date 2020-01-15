@@ -1,0 +1,22 @@
+$main-color: peru;
+
+$dark-gray: hsl(240, 10%, 38%);
+$light-gray: hsl(0, 0%, 93%);
+
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: $light-gray;
+   padding: 3em 4em;
+   line-height: 1.6;
+}

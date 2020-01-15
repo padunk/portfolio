@@ -1,60 +1,63 @@
 <script>
-	export let segment;
+  export let segment;
 </script>
 
-<style>
-	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
-		font-weight: 300;
-		padding: 0 1em;
-	}
+<style lang="scss">
+	@import "./style/global.scss";
+  .navigation {
+	  position: sticky;
+	  top: 0;
+	  z-index: 1000;
+	  background-color: $light-gray;
+    &__lists {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		place-items: center;
+		column-gap: 1rem;
+    }
 
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	/* clearfix */
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-
-	li {
-		display: block;
-		float: left;
-	}
-
-	.selected {
-		position: relative;
-		display: inline-block;
-	}
-
-	.selected::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: rgb(255,62,0);
-		display: block;
-		bottom: -1px;
-	}
-
-	a {
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
-	}
+    &__list {
+		 text-align: center;
+		 font-size: 1.3rem;
+		 a {
+			 h3 {
+            letter-spacing: .5rem;
+			 }
+		 }
+      a:link,
+      a:visited {
+        text-decoration: none;
+      }
+    }
+  }
 </style>
 
-<nav>
-	<ul>
-		<li><a class:selected='{segment === undefined}' href='.'>home</a></li>
-		<li><a class:selected='{segment === "about"}' href='about'>about</a></li>
+<nav class="navigation mb-md">
+  <ul class="navigation__lists">
+    <li class="navigation__list">
+      <a class:selected={segment === undefined} href=".">
+        <h3>Home</h3>
+        <div class="divider" />
+        <p>What's the weather today?</p>
+      </a>
+    </li>
+    <li class="navigation__list">
+      <a class:selected={segment === 'about'} href="about">
+        <h3>Projects</h3>
+        <div class="divider" />
+        <p>Some beautiful projects made with ❤️❤️❤️.</p>
+      </a>
+    </li>
 
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
+    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>blog</a></li>
-	</ul>
+    <li class="navigation__list">
+      <a rel="prefetch" class:selected={segment === 'blog'} href="blog">
+        <h3>Blogs</h3>
+        <div class="divider" />
+        <p>Sharing knowledge and enabled others dreams.</p>
+      </a>
+    </li>
+  </ul>
 </nav>
