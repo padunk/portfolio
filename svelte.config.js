@@ -3,10 +3,10 @@ const autoPreprocess = require('svelte-preprocess');
 module.exports = {
 	preprocess: autoPreprocess({
       scss: {
-         includePath: ['src'],
+         includePaths: ['src'],
       },
       postcss: {
-         plugins: require['autoprefixer'],
+         plugins: [require('autoprefixer')],
       },
    }),
 };
