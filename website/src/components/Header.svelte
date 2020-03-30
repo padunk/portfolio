@@ -1,26 +1,25 @@
+<script>
+  import Divider from "./Divider.svelte";
+  import DisplayTime from "./DisplayTime.svelte";
+</script>
+
 <style lang="scss">
   @import "./style/global.scss";
 
   .hero {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: repeat(2, min-content);
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(1px, max-content));
+    column-gap: 3rem;
+    place-items: center;
+    justify-content: center;
     font-size: 1.2rem;
-    padding: 3em 4em 0 4em;
-
-    &__date {
-      grid-column: 1 / -1;
-      justify-self: end;
-    }
+    padding: 3rem 4rem 0 4rem;
 
     &__title {
       text-align: center;
 
       h2 {
-        border-left: 2px solid $dark-gray;
-        border-right: 2px solid $dark-gray;
-        padding: 1rem 4rem 1rem 4rem;
+        padding: 1rem 4rem;
         letter-spacing: 0.4rem;
         font-size: 2.6rem;
       }
@@ -31,8 +30,8 @@
   }
 </style>
 
+<DisplayTime />
 <header class="hero mb-md">
-  <time class="hero__date mb-sm">15 January 2020</time>
   <div class="hero__contact">
     <p>
       Phone:
@@ -48,11 +47,13 @@
     </p>
     <p>Padang, West Sumatera</p>
   </div>
+  <Divider width={1} color="black" />
   <div class="hero__title">
     <h2>ABRAHAM A. AGUNG</h2>
     <div class="divider" style="width: 50%;" />
     <p>Curious web developer</p>
   </div>
+  <Divider width={1} color="black" />
   <div class="hero__forecast">
     <p>Weather forecast in your location</p>
     <p>13 - 19 January 2020</p>
