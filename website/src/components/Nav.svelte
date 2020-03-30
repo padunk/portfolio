@@ -1,4 +1,6 @@
 <script>
+  import Spacer from "./Spacer.svelte";
+
   export let segment;
 </script>
 
@@ -25,9 +27,6 @@
       text-align: center;
       font-size: 1.3rem;
 
-      &:hover {
-        background-color: $dark-gray-transparent;
-      }
       a {
         h3 {
           letter-spacing: 0.5rem;
@@ -58,14 +57,14 @@
     <li class="navigation__list">
       <a class:selected={segment === undefined} href=".">
         <h3>Home</h3>
-        <div class="divider" />
+        <Spacer height={10} />
         <p>What's the weather today?</p>
       </a>
     </li>
     <li class="navigation__list">
       <a class:selected={segment === 'about'} href="about">
         <h3>Projects</h3>
-        <div class="divider" />
+        <Spacer height={10} />
         <p>Some beautiful projects made with ❤️❤️❤️.</p>
       </a>
     </li>
@@ -75,7 +74,14 @@
     <li class="navigation__list">
       <a rel="prefetch" class:selected={segment === 'blog'} href="blog">
         <h3>Blogs</h3>
-        <div class="divider" />
+        <Spacer height={10} />
+        <p>Just my 💸💸 cents.</p>
+      </a>
+    </li>
+    <li class="navigation__list">
+      <a rel="prefetch" class:selected={segment === 'tutorial'} href="tutorial">
+        <h3>Tutorial</h3>
+        <Spacer height={10} />
         <p>Sharing knowledge and enabled others dreams.</p>
       </a>
     </li>
