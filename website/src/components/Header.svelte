@@ -1,6 +1,7 @@
 <script>
   import Divider from "./Divider.svelte";
   import DisplayTime from "./DisplayTime.svelte";
+  import Weather from "./Weather.svelte";
 </script>
 
 <style lang="scss">
@@ -54,9 +55,5 @@
     <p>Curious web developer</p>
   </div>
   <Divider width={1} color="black" />
-  <div class="hero__forecast">
-    <p>Weather forecast in your location</p>
-    <p>13 - 19 January 2020</p>
-    <p>Rainy, 30deg Celcius</p>
-  </div>
+  <Weather />
 </header>
