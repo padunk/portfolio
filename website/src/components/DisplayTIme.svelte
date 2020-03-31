@@ -18,10 +18,10 @@
   .date {
     display: block;
     text-align: right;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-right: 4rem;
     padding-top: 2rem;
   }
 </style>
 
-<time class="date mb-sm">{show}</time>
+<time class="date">{show}</time>
